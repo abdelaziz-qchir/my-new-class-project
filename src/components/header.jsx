@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import logo from "../assets/Caps-Shop-Logo.png";
 import { FaShoppingCart, FaHeart } from "react-icons/fa";
 
-function Header({cart, fav, slideCart}) {
+function Header({cart, fav, slideCart, favSlider}) {
     return (
         <header>
             <Link className="logo-link" to="/"><img src={logo} className="logo" alt="React logo" /></Link>
@@ -12,7 +12,8 @@ function Header({cart, fav, slideCart}) {
                 <li><Link className="header-link" to="/contact">Contact</Link></li>
                 <li><Link className="header-link" to="/login">Login</Link></li>
                 <li><button className="shopping-cart" onClick={slideCart}><FaShoppingCart /> {cart.length}</button></li>
-                <li><span><FaHeart />{fav.length}</span></li>
+                <li><button className="favorite-slider" onClick={favSlider}><FaHeart />{fav.length}</button></li>
+                <li><span></span></li>
             </ul>
         </header>
     );

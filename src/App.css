@@ -371,3 +371,80 @@ header ul {
 .cart-item-info {
   flex: 1;
 }
+
+
+/* Favorite dropdown */
+.fav-drop {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  width: 380px;
+  max-width: 90%;
+  height: 100vh;
+  padding: 25px 20px;
+  box-sizing: border-box;
+  background: white;
+  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  overflow-y: auto;
+  animation: slideIn 0.3s ease;
+}
+
+/* Favorite title */
+.fav-drop h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+/* Favorite item */
+.favorite-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* Product image */
+.favorite-item .imgitem {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+/* Product information */
+.favorite-item-info {
+  flex: 1;
+}
+
+.favorite-item-info h3 {
+  font-size: 16px;
+  margin: 0 0 8px;
+  color: #333;
+}
+
+.favorite-item-info p {
+  margin: 0;
+  font-size: 15px;
+  color: #e63946;
+  font-weight: bold;
+}
+
+/* Empty favorites message */
+.empty-fav {
+  text-align: center;
+  color: #777;
+  margin-top: 30px;
+}
+
+/* Slide animation */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
