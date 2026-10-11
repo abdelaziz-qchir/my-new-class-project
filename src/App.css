@@ -1,0 +1,373 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid rgb(204, 204, 204);
+  box-shadow: 0 6px 2px rgb(204, 204, 204);
+}
+
+.logo {
+  width: 50px;
+}
+
+header ul {
+  display: flex;
+  gap: 25px;
+  list-style-type: none;
+}
+
+.header-link {
+  position: relative;
+  text-decoration: none;
+  color: black;
+}
+
+.header-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: blue;
+  transition: width 0.4s ease;
+}
+
+.header-link:hover::after {
+  width: 100%;
+}
+
+.header-link:hover {
+  color: blue;
+}
+
+.acceuil {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-card {
+  flex: 1 1 250px;
+  text-align: center;
+  min-width: 0;
+  max-width: 350px;
+  background: white;
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 6px 2px rgb(204, 204, 204);
+  margin-bottom: 16px;
+}
+
+.item-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+.cart {
+   flex: 1 1 250px;
+  text-align: center;
+  min-width: 0;
+  max-width: 350px;
+  background: white;
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 6px 2px rgb(204, 204, 204);
+  margin-bottom: 16px;
+}
+
+/* Counter */
+.counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.counter-btn {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 6px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.counter-btn:hover {
+    background: #eee;
+}
+
+.count {
+    font-size: 18px;
+    font-weight: bold;
+    min-width: 25px;
+    text-align: center;
+}
+
+
+/* Add to cart + favorite */
+.card-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.cart-btn {
+    border: none;
+    background: #222;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cart-btn:hover {
+    background: #444;
+}
+
+.favorite-btn {
+    width: 42px;
+    height: 42px;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 6px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.favorite-btn:hover {
+    background: #eee;
+}
+
+.login {
+    width: 350px;
+    margin: 100px auto;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login h1 {
+    margin-bottom: 25px;
+}
+
+.login input[type="text"],
+.login input[type="password"] {
+    width: 90%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.login input[type="text"]:focus,
+.login input[type="password"]:focus {
+    border-color: #333;
+}
+
+.login input[type="button"] {
+    width: 97%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #222;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.login input[type="button"]:hover {
+    background-color: #444;
+}
+
+.login h3 {
+    margin-top: 15px;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.contact {
+    width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+}
+
+.contact-head {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.contact-head h2 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.contact-head p {
+    color: #666;
+}
+
+.contact-form label {
+    font-weight: bold;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.contact-form textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.contact-form input[type="button"] {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #222;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.contact-form input[type="button"]:hover {
+    background-color: #444;
+}
+
+.detail-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.detail-link:hover {
+    background-color: #555;
+}
+
+.detail {
+    width: 350px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 2px 8px #ddd;
+}
+
+.detail h2 {
+    color: #333;
+}
+
+.detail h3 {
+    font-size: 18px;
+    color: #555;
+    margin: 12px 0;
+}
+
+.detail img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    margin: 15px 0;
+}
+
+.detail a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.detail a:hover {
+    background-color: #555;
+}
+
+.cart-drop {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  width: 380px;
+  max-width: 90%;
+  height: 100vh;
+  padding: 25px 20px;
+  box-sizing: border-box;
+  background: white;
+  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  overflow-y: auto;
+
+  animation: slideIn 0.3s ease;
+}
+
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.imgitem {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.cart-item-info {
+  flex: 1;
+}
