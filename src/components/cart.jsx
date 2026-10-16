@@ -4,7 +4,7 @@ function Cart({ item, plusQte, minusQte }) {
             <img src={item.imageUrl} alt={item.name} className="imgitem" />
             <div className="quantite">
                 <button className="quantite-btn" onClick={() => minusQte(item)}>-</button>
-                <span className="quantite" >{item.quantite}</span>
+                <span className="quantite-value" >{item.quantite}</span>
                 <button className="quantite-btn" onClick={() => plusQte(item)}>+</button>
             </div>
 
