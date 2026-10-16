@@ -1,6 +1,6 @@
 import Cart from './cart'
 
-function DropCart({cartItems}) {
+function DropCart({cartItems, plusQte, minusQte}) {
     
     return (
         <div className="cart-drop">
@@ -9,6 +9,8 @@ function DropCart({cartItems}) {
             {cartItems.length > 0 ? (
                 cartItems.map((item, index) => (
                     <Cart
+                        plusQte={plusQte}
+                        minusQte={minusQte}
                         key={item.id ?? index}
                         item={item}
                     />

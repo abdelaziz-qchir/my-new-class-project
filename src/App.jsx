@@ -18,8 +18,24 @@ function App() {
   const [favoriteSlider, setFavoriteSlider] = useState(false)
 
   function addToCart(item) {
-    setCartItems([...cartItems, { ...item, "quantite": 1 }])
-    console.log(cartItems)
+    setCartItems(prevItems => {
+      const existe = prevItems.some(
+        produit => produit.id === item.id
+      );
+
+      if (existe) {
+        return prevItems.map(produit =>
+          produit.id === item.id
+            ? {
+              ...produit,
+              quantite: produit.quantite + 1
+            }
+            : produit
+        );
+      }
+
+      return [...prevItems, { ...item, quantite: 1 }];
+    });
   }
 
   function vueSlideCart() {
@@ -45,6 +61,20 @@ function App() {
     setFavoriteSlider(!favoriteSlider)
   }
 
+  function plusQte(item) {
+    setCartItems(cartItems.map(produit => produit.id != item.id ? produit : { ...produit, "quantite": produit.quantite + 1 }))
+  }
+
+  function minusQte(item) {
+    if (item.quantite == 1) {
+      setCartItems(cartItems.filter(produit => produit != item))
+    } else {
+
+      setCartItems(cartItems.map(produit => produit.id == item.id ? { ...produit, "quantite": produit.quantite - 1 } : produit))
+    }
+  }
+
+
   return (
     <>
       <BrowserRouter>
@@ -58,7 +88,7 @@ function App() {
           <Route path='/detail/:id' element={<Detail />} />
           {/* <Route path='/cart' element={<Cart cartItems={cartItems} />}/> */}
         </Routes>
-        {sliderCart ? <DropCart cartItems={cartItems} /> : null}
+        {sliderCart ? <DropCart cartItems={cartItems} plusQte={plusQte} minusQte={minusQte} /> : null}
         {favoriteSlider ? <DropFav favoriteItems={favoriteItems} /> : null}
       </BrowserRouter>
     </>
