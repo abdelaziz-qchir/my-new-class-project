@@ -11,6 +11,7 @@ import DropFav from './components/DropFav.jsx'
 import './App.css'
 
 function App() {
+  //  commnt to test git in this project
   const [cartItems, setCartItems] = useState([])
   const [sliderCart, setSliderCart] = useState(false)
 
