@@ -1,6 +1,6 @@
 import Cart from './cart'
 
-function DropCart({cartItems, plusQte, minusQte}) {
+function DropCart({cartItems, plusQte, minusQte, total}) {
     
     return (
         <div className="cart-drop">
@@ -20,6 +20,10 @@ function DropCart({cartItems, plusQte, minusQte}) {
                     Your cart is empty
                 </p>
             )}
+            <div className="cart-total">
+                <h3>Montant Total :</h3>
+                <p>{total} $</p>
+            </div>
         </div>
     )
 }

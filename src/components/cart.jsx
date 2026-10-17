@@ -10,7 +10,7 @@ function Cart({ item, plusQte, minusQte }) {
 
             <div className="cart-item-info">
                 <h3>{item.name}</h3>
-                <p>${item.price}</p>
+                <p>${item.price*item.quantite}</p>
             </div>
         </div>
     )

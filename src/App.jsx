@@ -17,6 +17,8 @@ function App() {
   const [favoriteItems, setFavoriteItems] = useState([])
   const [favoriteSlider, setFavoriteSlider] = useState(false)
 
+  const [total, setTotal ] = useState(0)
+
   function addToCart(item) {
     setCartItems(prevItems => {
       const existe = prevItems.some(
@@ -63,9 +65,11 @@ function App() {
 
   function plusQte(item) {
     setCartItems(cartItems.map(produit => produit.id != item.id ? produit : { ...produit, "quantite": produit.quantite + 1 }))
+    setTotal(total+item.price)
   }
 
   function minusQte(item) {
+    setTotal(total-item.price)
     if (item.quantite == 1) {
       setCartItems(cartItems.filter(produit => produit != item))
     } else {
@@ -88,7 +92,7 @@ function App() {
           <Route path='/detail/:id' element={<Detail />} />
           {/* <Route path='/cart' element={<Cart cartItems={cartItems} />}/> */}
         </Routes>
-        {sliderCart ? <DropCart cartItems={cartItems} plusQte={plusQte} minusQte={minusQte} /> : null}
+        {sliderCart ? <DropCart total={total} cartItems={cartItems} plusQte={plusQte} minusQte={minusQte} /> : null}
         {favoriteSlider ? <DropFav favoriteItems={favoriteItems} /> : null}
       </BrowserRouter>
     </>
